@@ -1,3 +1,5 @@
+# Ejemplo de front-end and back-end
+
 import ft_example_6 as E6;
 
 def ejecutar_converir_a_dolares(trm):
