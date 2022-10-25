@@ -11,3 +11,30 @@
 # Usted debe construir una función que, dados los resultados de los estudiantes, calcule las siguientes estadísticas para una tarea dada su nombre: la mayor nota obtenida, el nombre del estudiante que obtuvo la mejor nota, la menor nota obtenida, el nombre del estudiante que obtuvo la peor nota, el promedio de las notas de los estudiantes, la cantidad de estudiantes que recibieron una nota y la suma de las notas obtenidas por los estudiantes.
 
 # La función debe retornar un diccionario con las siguientes llaves: "mayor", "mejor", "menor", "peor", "promedio", "cantidad" y "total".
+
+def calcular_estadisticas_tarea(estudiantes_tareas, nombre_tarea):
+    nombre_estudiante = []
+    nota = []
+
+    for estudiante, asignacion in estudiantes_tareas.items():
+        if nombre_tarea in asignacion:
+            nombre_estudiante.append(estudiante)
+            nota.append(asignacion[nombre_tarea])
+            mayor = max(nota)
+            menor = min(nota)
+
+            if asignacion[nombre_tarea] == mayor:
+                mejor = estudiante
+            
+            if asignacion[nombre_tarea] == menor:
+                peor = estudiante
+            
+            cantidad = len(nota)
+
+            total = sum(nota)
+            
+            promedio = total/cantidad
+    
+    dict = {'mayor': mayor, 'mejor': mejor, 'menor': menor, 'peor': peor, 'promedio': promedio, 'cantidad': cantidad, 'total': total}
+   
+    return dict
