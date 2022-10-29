@@ -9,15 +9,11 @@ def reflejar_imagen(imagen):
     matriz = imagen
     alto = len(matriz)
     ancho = len(matriz[0])
-    print(alto)    
-    print(ancho)    
     for valor_eje_y in range(alto):
         for valor_eje_x in range(int(ancho/2)):
             indice_opuesto = ancho - valor_eje_x - 1
             opuesto = matriz[valor_eje_y][indice_opuesto]
-            print(opuesto)
             actual = matriz[valor_eje_y][valor_eje_x]
-            print(actual)
             matriz[valor_eje_y][indice_opuesto] = actual
             matriz[valor_eje_y][valor_eje_x] = opuesto
 
