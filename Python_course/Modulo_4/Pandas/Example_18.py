@@ -14,9 +14,6 @@
 
 import pandas as pd
 
-def aproximar(numero):
-    return round(numero, 1)
-
 def calcular_habitantes_por_puesto(poblacion, universidades):
     cant_estudiantes = universidades.groupby('country')
 
